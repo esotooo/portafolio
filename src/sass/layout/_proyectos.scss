@@ -26,7 +26,7 @@
         font-size: 2.5rem;
         color: v.$white;
         font-weight: 500;
-        color: v.$teal;
+        color: v.$amber;
         font-weight: 800;
     }
     p{
@@ -95,12 +95,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
     }
     i{
         display: flex;
         margin-right: 1rem;
         align-items: center;
         justify-content: center;
+        font-size: 3rem;
+        @include phone{
+            font-size: 2rem;
+        }
     }
 }
 .ver-todos{

@@ -50,6 +50,8 @@
         padding: 2rem;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+
         margin-top: 0;
         row-gap: 1rem;
         column-gap: 2rem;

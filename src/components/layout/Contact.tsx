@@ -31,7 +31,7 @@ export default function Contact() {
                 setMessage('')
                 setTimeout(() => {
                     setShowConfirm(false)
-                }, 4000);
+                }, 3000);
             })
             .catch(() => {
                 console.log("An error has occured, please try again")
@@ -70,7 +70,7 @@ export default function Contact() {
                      También colaboré como asistente de documentación en un laboratorio, apoyando en la creación de material gráfico y técnico. 
                      Estas experiencias reforzaron mi atención al detalle y enfoque centrado en el usuario, cualidades que aplico hoy como desarrollador frontend en formación.
                 </p>
-                <a href="/public/CV_EdwinSoto_FrontendDeveloper.pdf" className="boton-principal" download>Descargar CV</a>
+                <a href="/CV_EdwinSoto_FrontendDeveloper.pdf" className="boton-principal" download>Descargar CV</a>
             </div>
             <div className="tecnologias">
                 <h1>Tecnologías</h1>

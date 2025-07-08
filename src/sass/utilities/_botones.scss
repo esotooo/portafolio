@@ -18,7 +18,7 @@
   box-shadow:
     inset 0 0 0.5px rgba(255, 255, 255, 0.5), 
     0 4px 30px rgba(0, 0, 0, 0.3); 
-    transition: 0.9s;
+  transition: 0;
   display: flex;
   justify-content: center;
   cursor: pointer;
@@ -38,6 +38,8 @@
     @include phone{
       box-shadow: inset 30rem 0 0 0 v.$amber,
       0 4px 30px rgba(255, 255, 255, .1);
+      transition: 0.9s;
+
     }
   }
 }
@@ -67,7 +69,7 @@
     box-shadow:
       inset 0 0 0.5px rgba(255, 255, 255, 0.5), 
       0 4px 30px rgba(0, 0, 0, 0.3); 
-      transition: 0.9s;
+    transition: 0;
 
     &:hover,
     &:focus {
@@ -78,6 +80,7 @@
       @include phone{
         box-shadow: inset 30rem 0 0 0 v.$amber,
         0 4px 30px rgba(255, 255, 255, .1);
+        transition: 0.9s;
       }
     }
   }

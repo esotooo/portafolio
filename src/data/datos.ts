@@ -54,8 +54,8 @@ export const proyectos : proyecto[] = [
         "title": "Carrito de Compras",
         "image": carrito,
         "description": "Carrito de compras utilizando useState y useEffect. También aplicando tailwind CSS.",
-        "url1": "#",
-        "url2": "#"
+        "url1": "https://guitarcartts.netlify.app/",
+        "url2": "https://github.com/esotooo/carritoCompras"
     },
     {
         "id": 2,

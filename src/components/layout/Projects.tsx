@@ -41,8 +41,6 @@ export default function Projects() {
           Más proyectos <IoIosArrowRoundForward />
         </Link>
       </div>
-
-
     </section>
   );
 }

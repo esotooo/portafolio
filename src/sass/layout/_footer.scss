@@ -10,12 +10,6 @@ footer {
   font-size: 1.6rem;
   text-align: center;
 
-  display: grid;
-  grid-template-columns: 1fr; /* móvil: 1 columna */
-  gap: 2rem;
-  justify-items: center; /* centra contenido de cada columna */
-  align-items: center;
-
   p,
   nav,
   .socials {
@@ -28,31 +22,6 @@ footer {
     gap: 1rem;
     align-items: center; /* centra los enlaces */
 
-    a {
-      color: v.$white;
-      text-decoration: none;
-      font-weight: 500;
-
-      &:hover {
-        color: v.$amber;
-      }
-    }
-  }
-
-  .socials {
-    display: flex;
-    gap: 2rem;
-
-    a {
-      color: v.$white;
-      font-size: 2.8rem;
-
-      &:hover {
-        color: v.$amber;
-      }
-    }
-  }
-
   .footer-tagline {
     grid-column: 1 / -1; /* ocupa toda la fila */
     margin-top: 2rem;
@@ -61,9 +30,5 @@ footer {
     font-size: 1.4rem;
     text-align: center;
   }
-
-  @include tablet {
-    grid-template-columns: repeat(3, 1fr); /* tablet y desktop: 3 columnas */
-    gap: 2rem;
-  }
+}
 }
