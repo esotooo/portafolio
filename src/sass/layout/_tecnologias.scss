@@ -1,0 +1,75 @@
+@use '/src/sass/global/variables' as v;
+@use '/src/sass/global/mixins' as *;
+
+@include desktop{
+    .contactame{
+        margin-top: 5rem;
+        padding: 0 20rem;
+    }
+}
+@include tablet{
+    .tecnologias{
+        margin-top: 15rem;
+    }
+    .tecnologia-cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.sobre-mi{
+    h1{
+        color: v.$white;
+        font-family: v.$titulo2;
+        font-size: 4rem;
+    }
+    p{
+        margin-top: -1rem;
+        color: v.$white;
+        font-family: v.$contenido;
+        font-size: 1.6rem;
+    }
+}
+.tecnologias{
+    display: grid;
+    gap: 2rem;
+    margin-top: 10rem;
+    color: v.$white;
+    h1{
+        font-family: v.$titulo2;
+        font-size: 4rem;
+    }
+}
+
+.tecnologia-cards{
+    display: grid;
+    column-gap: 2rem;
+    row-gap: 2rem;
+     .tecnologia{
+        background-color: #355c69;
+        border-radius: 3rem;
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 0;
+        row-gap: 1rem;
+        column-gap: 2rem;
+        h2{
+            font-family: v.$contenido;
+            font-size: 2.6rem;
+            font-weight: bold;
+            margin: 0;
+            grid-column: 1 / 5;
+            padding: 0;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+

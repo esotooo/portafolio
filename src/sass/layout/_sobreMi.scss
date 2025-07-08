@@ -1,0 +1,103 @@
+@use '/src/sass/global/variables' as v;
+@use '/src/sass/global/mixins' as *;
+
+.informacion{
+    color: v.$white;
+    text-align: left;
+    margin-bottom: 2rem;
+    h1{
+        font-family: v.$titulo2;
+        font-size: 4rem;
+        span{
+            color: v.$teal;
+        }
+    }
+    h2{
+        font-family: v.$subtitulo;
+        font-size: 2rem;
+        margin-top: -4rem;
+        font-weight: 400;
+        color: v.$amber;
+    }
+    p{
+        font-family: v.$contenido;
+    }
+}
+
+.boton-enlaces{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: -2rem;
+    padding: 0;
+    row-gap: 1rem;
+
+}
+.boton{
+    a{
+        justify-content: center;
+    }
+    i{
+        margin-right: 1rem;
+        padding: 0;
+    }
+}
+.informacion{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    .imagen{
+        padding-top: 8rem;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            height: 20rem;
+            width: 20rem;
+            float: left;
+            clip-path: circle(50%);
+            shape-outside: circle(50%);
+            object-fit: cover;
+            display: block;
+            box-shadow: 0px 10px 10px v.$black;
+        }
+    }
+}
+.inicio{
+    margin-top: 5rem;
+}
+
+/*MEDIA QUERIES*/
+@include tablet{
+    .inicio{
+        margin-top: 19rem;
+        margin-bottom: 25rem;
+    }
+    .boton-enlaces{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    }
+@include desktop{
+    .inicio{
+        margin-top: 25rem;
+        margin-bottom: 30rem; 
+    }
+    .informacion{
+        display: flex;
+        padding: 0 20rem;
+        margin-bottom: 0;
+    }
+    .boton{
+        padding: 1rem 20rem 0 20rem;
+    }
+    .boton-enlaces{
+        display: flex;
+        justify-content: left;
+    }
+}
+
+
+

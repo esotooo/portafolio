@@ -1,0 +1,88 @@
+@use '/src/sass/global/variables' as v;
+@use '/src/sass/global/mixins' as *;
+
+
+.boton-principal{
+  font-weight: 400;
+  text-decoration: none;
+  color: v.$white;
+  font-family: v.$contenido;
+  margin-left: 2rem;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 4rem;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  box-shadow:
+    inset 0 0 0.5px rgba(255, 255, 255, 0.5), 
+    0 4px 30px rgba(0, 0, 0, 0.3); 
+    transition: 0.9s;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  margin: auto;
+
+  @include tablet{
+    width: 30%;
+  }
+
+  &:hover,
+  &:focus{
+    box-shadow: inset 60rem 0 0 0 v.$amber,
+    0 4px 30px rgba(255, 255, 255, .1);
+    border-color: v.$amber;
+    color: v.$white;
+    font-weight: 600;
+    @include phone{
+      box-shadow: inset 30rem 0 0 0 v.$amber,
+      0 4px 30px rgba(255, 255, 255, .1);
+    }
+  }
+}
+
+.boton {
+  i{
+      width: 2rem;
+      height: 2rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  a {
+    text-decoration: none;
+    color: v.$white;
+    font-family: v.$contenido;
+    margin-left: 2rem;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 4rem;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: 2px solid;
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    box-shadow:
+      inset 0 0 0.5px rgba(255, 255, 255, 0.5), 
+      0 4px 30px rgba(0, 0, 0, 0.3); 
+      transition: 0.9s;
+
+    &:hover,
+    &:focus {
+      box-shadow: inset 60rem 0 0 0 v.$amber,
+      0 4px 30px rgba(0, 0, 0, 0.3);
+      border-color: v.$amber;
+      color: v.$white;
+      @include phone{
+        box-shadow: inset 30rem 0 0 0 v.$amber,
+        0 4px 30px rgba(255, 255, 255, .1);
+      }
+    }
+  }
+}
+
+
+
+

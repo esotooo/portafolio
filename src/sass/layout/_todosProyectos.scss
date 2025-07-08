@@ -1,0 +1,19 @@
+@use '/src/sass/global/variables' as v;
+@use '/src/sass/global/mixins' as *;
+
+.proyectos-todos{
+    margin-top: 15rem;
+    margin-bottom: 10rem;
+    h1{
+        font-family: v.$titulo2;
+        font-size: 4rem;
+        color: v.$white;
+        margin-bottom: 2rem;
+    }
+}
+
+@include desktop{
+    .proyectos-todos{
+        padding:0 20rem 0 20rem;
+    }
+}

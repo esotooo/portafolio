@@ -1,0 +1,21 @@
+/**GLOBAL**/
+@forward 'global/variables';
+@forward 'global/normalize';
+@forward 'global/globales';
+@forward 'global/mixins';
+
+/**LAYOUT**/
+@forward 'layout/header';
+@forward 'layout/sobreMi';
+@forward 'layout/experiencia';
+@forward 'layout/proyectos';
+@forward 'layout/tecnologias';
+@forward 'layout/contacto';
+@forward 'layout/todosProyectos';
+@forward 'layout/footer';
+
+
+
+/**BOTONES**/
+@forward 'utilities/botones';
+

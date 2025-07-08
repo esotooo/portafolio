@@ -1,0 +1,161 @@
+@use '/src/sass/global/variables' as v;
+@use '/src/sass/global/mixins' as *;
+
+/*Formulario de Contacto*/
+.contacto{
+    margin-top: 10rem;
+    margin-bottom: 6rem;
+    background-color: #355c69;
+    border-radius: 3rem;
+    padding: 2rem;
+    h1{
+        font-family: v.$titulo2;
+        font-size: 4rem;
+        margin: 0;
+        padding: 0;
+    }
+    p{
+        font-family: v.$contenido;
+        font-size: 2rem;
+    }
+    label{
+        font-family: v.$subtitulo;
+        font-size: 2rem;
+    }
+    input, textarea{
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 2rem;
+        padding: 1rem 2rem;
+        font-family: v.$contenido;
+        font-size: 2rem;
+        border: 2px solid v.$teal;
+    }
+    textarea{
+        height: 10rem;
+        max-height: 15rem;
+    }
+    input[type='submit']{
+        margin-top: 2rem;
+        justify-content: center;
+        cursor: pointer;
+        color: v.$white;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 0.5px rgba(255, 255, 255, 0.5),
+        0 4px 30px rgba(0, 0, 0, 0.3);
+        font-family: v.$subtitulo;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 3rem;
+        display: flex;
+        justify-content: center;
+        transition: 0.9s;
+        
+        &:hover,
+        &:focus{
+          box-shadow: inset 40rem 0 0 0 v.$amber,
+          0 4px 30px rgba(255, 255, 255, .1);
+          border-color: v.$amber;
+          color: v.$white;
+          font-weight: 600;
+          @include desktop{
+            box-shadow: inset 40rem 0 0 0 v.$amber,
+            0 4px 30px rgba(255, 255, 255, .1);
+          }
+          @include tablet{
+            box-shadow: inset 100rem 0 0 0 v.$amber,
+            0 4px 30px rgba(255, 255, 255, .1);
+            transition: 1.5s;
+          }
+        }
+    }
+    @include desktop{
+        input[type='submit']{
+            width: 50%;
+            justify-content: center;
+            margin: 2rem auto;
+        }
+    }
+}
+
+/*Diseños de la ventana de confirmación*/
+.ventana-confirmacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1000;
+  
+    .contenido {
+      color: v.$white;
+      background-color: #0f2027;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      padding: 3rem;
+      border-radius: 4rem;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  
+      width: 90%;
+      max-width: 30rem;
+      min-height: 20rem;
+  
+      @include tablet {
+        max-width: 50rem;
+        min-height: 30rem;
+      }
+  
+      @include desktop {
+        max-width: 70rem;
+        min-height: 50rem;
+      }
+  
+      .animacion {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 1rem auto;
+  
+        @include tablet {
+          width: 150px;
+          height: 150px;
+        }
+  
+        @include desktop {
+          width: 200px;
+          height: 200px;
+        }
+      }
+  
+      .texto {
+        margin-top: 2rem;
+  
+        h4 {
+          font-family: v.$subtitulo;
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+        }
+  
+        p {
+          font-family: v.$contenido;
+          font-size: 1.8rem;
+          line-height: 1.4;
+          margin: 0;
+        }
+      }
+    }
+  }
+  
