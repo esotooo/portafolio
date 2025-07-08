@@ -17,7 +17,7 @@ export default function Contact() {
     const sendEmail = (e : React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         axios
-            .post("http://localhost:4000/", {
+            .post("https://portafolio-production-f79f.up.railway.app/", {
                     name,
                     email,
                     subject,
@@ -79,19 +79,25 @@ export default function Contact() {
                         <h2 className="frontend">Frontend</h2>
                         {/*Iteramos nuestro objeto con la informacion de las tecnologias que manejo*/}
                         {imageFront.map(image => (
-                            <img src={image.path} alt="Imagen lenguaje" key={image.id}  loading="lazy" />
+                            <div className="img-container">
+                                <img src={image.path} alt="Imagen lenguaje" key={image.id}  loading="lazy" />
+                            </div>
                         ))}
                     </div>
                     <div className="tecnologia">
                         <h2 className="herramientas">Herramientas</h2>
                         {tools.map(image => (
-                            <img src={image.path} alt="Imagen lenguaje" key={image.id} loading="lazy"/>
+                            <div className="img-container">
+                                <img src={image.path} alt="Imagen lenguaje" key={image.id} loading="lazy"/>
+                            </div>
                         ))}
                     </div>
                     <div className="tecnologia aprendiendo">
                         <h2 className="aprendiendo">Aprendiendo</h2>
                         {imageLearning.map(image => (
-                            <img src={image.path} alt="Imagen lenguaje" key={image.id}  loading="lazy"/>
+                            <div className="img-container">
+                                <img src={image.path} alt="Imagen lenguaje" key={image.id}  loading="lazy"/>
+                            </div>
                         ))}
                     </div>
                 </div>
