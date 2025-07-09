@@ -36,7 +36,7 @@ app.use((req, res, next) => {
   }
 
   next(); // Pasar al siguiente middleware o ruta
-});
+})
 
 // Función que envía el correo a tu email personal
 function sendEmailToMe({ email, subject, message, name }) {
@@ -45,10 +45,10 @@ function sendEmailToMe({ email, subject, message, name }) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.GMAIL_MAIL,  // Tu correo Gmail
+        user: process.env.GMAIL_MAIL,  // Correo Gmail
         pass: process.env.GMAIL_PASS   // Contraseña o token de app
       },
-    });
+    })
 
     // Configuración del correo que enviarás a ti mismo
     const mailConfigs = {
@@ -57,17 +57,17 @@ function sendEmailToMe({ email, subject, message, name }) {
       subject: `Asunto: ${subject}`, // Asunto del correo
       text: `Nombre: ${name}\nCorreo: ${email}\nMensaje:\n${message}`, // Texto plano
       html: `<div></div>` // Aquí podrías poner HTML si quieres
-    };
+    }
 
     // Envía el correo y maneja error o éxito
     transporter.sendMail(mailConfigs, function (error, info) {
       if (error) {
-        console.log(error);
-        return reject(error);
+        console.log(error)
+        return reject(error)
       }
-      return resolve(info);
-    });
-  });
+      return resolve(info)
+    })
+  })
 }
 
 // Función que envía un correo de confirmación al usuario que llenó el formulario
@@ -94,10 +94,10 @@ function sendConfirmationEmailToUser({ email, name, subject }) {
     // Envía el correo y maneja error o éxito
     transporter.sendMail(mailConfigs, function (error, info) {
       if (error) {
-        console.log(error);
-        return reject(error);
+        console.log(error)
+        return reject(error)
       }
-      return resolve(info);
+      return resolve(info)
     });
   });
 }
@@ -105,24 +105,23 @@ function sendConfirmationEmailToUser({ email, name, subject }) {
 // Ruta POST principal para recibir el formulario de contacto
 app.post("/", async (req, res) => {
   try {
-    console.log("Body recibido:", req.body); // Log de lo recibido
+    console.log("Body recibido:", req.body);
 
-    // Enviar correo a ti mismo con los datos del formulario
     await sendEmailToMe(req.body);
-
-    // Enviar correo de confirmación al usuario que llenó el formulario
     await sendConfirmationEmailToUser(req.body);
 
-    // Respuesta exitosa al cliente
-    res.send("Mensajes enviados correctamente");
+    // Enviar respuesta JSON con éxito
+    res.json({ success: true, message: "Mensajes enviados correctamente" });
   } catch (error) {
     console.error("Error enviando correos:", error);
-    // Respuesta de error en caso de falla
-    res.status(500).send("Error enviando correos");
+
+    // Enviar respuesta JSON con error
+    res.status(500).json({ success: false, message: "Error enviando correos" });
   }
 });
 
+
 // Inicia el servidor en el puerto definido
 app.listen(port, () => {
-  console.log(`Nodemailer escuchando en http://localhost:${port}`);
-});
+  console.log(`Nodemailer escuchando en http://localhost:${port}`)
+})
