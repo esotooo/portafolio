@@ -4,30 +4,88 @@ import nodemailer from "nodemailer";
 import cors from "cors";
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4000
 
-dotenv.config();
+dotenv.config()
 
-// Configura CORS de forma explícita
+// Middleware para permitir solicitudes CORS desde cualquier origen con configuración básica
 app.use(cors({
-  origin: '*', // o pon el dominio específico de tu frontend para mayor seguridad
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
+  preflightContinue: false,
   optionsSuccessStatus: 204
 }));
 
-// Middleware para parsear JSON y URL-encoded
+// Middleware para parsear JSON y datos codificados en la URL con límite de tamaño
 app.use(express.json({ limit: "25mb" }));
 app.use(express.urlencoded({ limit: "25mb", extended: true }));
 
-// Opcional: responder OPTIONS para todas las rutas, aunque cors ya lo maneja
-app.options('*', (req, res) => {
-  res.sendStatus(204);
+// Middleware adicional para cabeceras CORS y Private Network Access (opcional, pero puede ayudar en algunos casos)
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Private-Network", "true");
+  next();
 });
 
-// Funciones para enviar correos (igual que tú las tienes)...
+// Función que envía el correo a tu email personal
+function sendEmailToMe({ email, subject, message, name }) {
+  return new Promise((resolve, reject) => {
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.GMAIL_MAIL,
+        pass: process.env.GMAIL_PASS
+      },
+    });
 
-// Tu ruta POST principal
+    const mailConfigs = {
+      from: process.env.GMAIL_MAIL,
+      to: process.env.GMAIL_MAIL,
+      subject: `Asunto: ${subject}`,
+      text: `Nombre: ${name}\nCorreo: ${email}\nMensaje:\n${message}`,
+      html: `<div></div>`
+    };
+
+    transporter.sendMail(mailConfigs, function (error, info) {
+      if (error) {
+        console.log(error);
+        return reject(error);
+      }
+      return resolve(info);
+    });
+  });
+}
+
+// Función que envía correo de confirmación al usuario
+function sendConfirmationEmailToUser({ email, name, subject }) {
+  return new Promise((resolve, reject) => {
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.GMAIL_MAIL,
+        pass: process.env.GMAIL_PASS
+      },
+    });
+
+    const mailConfigs = {
+      from: process.env.GMAIL_MAIL,
+      to: email,
+      subject: `Confirmación de recepción de mensaje. Asunto: ${subject}`,
+      text: `Hola ${name},\n\nGracias por contactarme. He recibido tu mensaje y pronto me pondré en contacto contigo.\n\nSaludos!`,
+      html: `<div></div>`
+    };
+
+    transporter.sendMail(mailConfigs, function (error, info) {
+      if (error) {
+        console.log(error);
+        return reject(error);
+      }
+      return resolve(info);
+    });
+  });
+}
+
+// Ruta POST para recibir formulario
 app.post("/", async (req, res) => {
   try {
     console.log("Body recibido:", req.body);

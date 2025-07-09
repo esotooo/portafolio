@@ -34,7 +34,7 @@ export default function Contact() {
                 }, 3000);
             })
             .catch(() => {
-                console.log("An error has occured, please try again")
+                console.log("")
             })
     }
     
