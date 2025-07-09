@@ -17,7 +17,7 @@ export default function Contact() {
     const sendEmail = (e : React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         axios
-            .post("http://localhost:4000/", {
+            .post("https://portafolio-o0bc.onrender.com/", {
                     name,
                     email,
                     subject,
