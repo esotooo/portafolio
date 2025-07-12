@@ -5,25 +5,32 @@ import lottie from 'lottie-web'
 
 export default function Contact() {
 
+    //Estado de los datos ingresados por el usuario en el formulario
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [subject, setSubject] = useState('')
     const [message, setMessage] = useState('')
 
+    //Estados de los mensajes
     const [showConfirm, setShowConfirm] =useState(false)
+    const [showError, setShowError] = useState(false)
+
     const container  = useRef<HTMLDivElement>(null)
     const animInstance = useRef<any>(null)
 
+
+    //Conectando a la API pare enviar el correo
     const sendEmail = (e : React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         axios
-            .post("https://portafolio-o0bc.onrender.com/", {
+            .post("https://portafolio-o0bc.onrender.com", {
                     name,
                     email,
                     subject,
                     message
             })
             .then(() => {
+                console.log('Enviado exitosamente')
                 setShowConfirm(true)
                 setName('')
                 setEmail('')
@@ -31,10 +38,14 @@ export default function Contact() {
                 setMessage('')
                 setTimeout(() => {
                     setShowConfirm(false)
-                }, 3000);
+                }, 3000)
             })
             .catch(() => {
-                console.log("")
+                setShowError(true)
+                console.log('Algo ha salido mal')
+                setTimeout(() => {
+                    setShowError(false)
+                }, 3000)
             })
     }
     
@@ -57,6 +68,25 @@ export default function Contact() {
         }
       }, [showConfirm]);
 
+
+    useEffect(() => {
+        if(showError && container.current){
+            animInstance.current = lottie.loadAnimation({
+                container: container.current,
+                renderer: 'svg',
+                loop: false,
+                autoplay: true,
+                path: '/lottie/error-confirmation.json'
+            })
+        }
+
+        return () => {
+            if(animInstance.current){
+                animInstance.current.destroy()
+                animInstance.current = null
+            }
+        }
+    }, [showError])
 
 
     return (
@@ -126,7 +156,7 @@ export default function Contact() {
                     </form>
             </div>
 
-            {/*VENTANA DE CONFIRMACION*/}
+            {/*VENTANA DE CONFIRMACION (EXITOSO) */}
             {showConfirm && (
                 <div className="ventana-confirmacion">
                     <div className="contenido">
@@ -141,6 +171,23 @@ export default function Contact() {
 
                 </div>
             )}
+
+            {/*VENTANA DE CONFIRMACION (ERROR) */}
+            {showError && (
+                <div className="ventana-confirmacion">
+                    <div className="contenido">
+                        <div className="animacion" ref={container}> </div>
+                        <div className="texto">
+                            <h4>Error 🙁</h4>
+                            <p>
+                                Algo ha salido mal, porfavor intenta de nuevo. 
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            )}
+
         </section>
     )
 }

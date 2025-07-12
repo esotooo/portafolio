@@ -43,7 +43,9 @@ function sendEmailToMe({ email, subject, message, name }) {
       to: process.env.GMAIL_MAIL,
       subject: `Asunto: ${subject}`,
       text: `Nombre: ${name}\nCorreo: ${email}\nMensaje:\n${message}`,
-      html: `<div></div>`
+      html: `<div>
+      
+      </div>`
     };
 
     transporter.sendMail(mailConfigs, function (error, info) {
