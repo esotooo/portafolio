@@ -6,7 +6,7 @@ export default function Footer() {
   return (
   <footer>
     <p>© {currentYear} Edwin Soto</p>
-    <p>Diseñado y desarrollado por mí con React & Sass</p>
+    <p>Portafolio diseñado y desarrollado con React y Sass.</p>
   </footer>
 
   )

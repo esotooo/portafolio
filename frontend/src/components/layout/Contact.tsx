@@ -1,9 +1,14 @@
 import { useEffect, useRef, useState } from "react"
-import { imageFront, imageLearning, tools } from "../../data/datos"
 import axios from "axios"
 import lottie from 'lottie-web'
+import { useOnScreen } from "../../hooks/useOnScreen";
+
+
 
 export default function Contact() {
+
+    const { ref, isVisible } = useOnScreen<HTMLFormElement>({ threshold: 0.2 });
+
 
     //Estado de los datos ingresados por el usuario en el formulario
     const [name, setName] = useState('')
@@ -30,7 +35,6 @@ export default function Contact() {
                     message
             })
             .then(() => {
-                console.log('Enviado exitosamente')
                 setShowConfirm(true)
                 setName('')
                 setEmail('')
@@ -42,7 +46,6 @@ export default function Contact() {
             })
             .catch(() => {
                 setShowError(true)
-                console.log('Algo ha salido mal')
                 setTimeout(() => {
                     setShowError(false)
                 }, 3000)
@@ -91,70 +94,36 @@ export default function Contact() {
 
     return (
         <section className="container contactame" id="contact">
-            <div className="sobre-mi">
-                <h1>Sobre Mí</h1>
+            <form 
+                ref={ref}
+                onSubmit={sendEmail} 
+                className={`contacto ${isVisible ? "fadeZoom" : ""}`}
+                style={{animationDelay: ".6s"}}
+            >
+                <h1>Contacto</h1>
                 <p>
-                    Estudio Ingeniería en Sistemas y actualmente curso mi tercer año. 
-                     Me especializo en desarrollo frontend, con enfoque en crear interfaces atractivas y funcionales. 
-                     He trabajado como representante de servicio al cliente, donde desarrollé habilidades en comunicación, empatía y resolución de problemas. 
-                     También colaboré como asistente de documentación en un laboratorio, apoyando en la creación de material gráfico y técnico. 
-                     Estas experiencias reforzaron mi atención al detalle y enfoque centrado en el usuario, cualidades que aplico hoy como desarrollador frontend en formación.
+                    ¿Te gustaría colaborar o tienes alguna consulta? ¡Estoy listo para ayudarte!
                 </p>
-                <a href="/CV_EdwinSoto_FrontendDeveloper.pdf" className="boton-principal" download>Descargar CV</a>
-            </div>
-            <div className="tecnologias">
-                <h1>Tecnologías</h1>
-                <div className="tecnologia-cards gradiente-texto">
-                    <div className="tecnologia">
-                        <h2 className="frontend">Frontend</h2>
-                        {/*Iteramos nuestro objeto con la informacion de las tecnologias que manejo*/}
-                        {imageFront.map(image => (
-                            <div className="img-container"  key={image.id} >
-                                <img src={image.path} alt="Imagen lenguaje"  key={image.id} loading="lazy" />
-                            </div>
-                        ))}
-                    </div>
-                    <div className="tecnologia">
-                        <h2 className="herramientas">Herramientas</h2>
-                        {tools.map(image => (
-                            <div className="img-container"  key={image.id}>
-                                <img src={image.path} alt="Imagen lenguaje" key={image.id} loading="lazy"/>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="tecnologia aprendiendo">
-                        <h2 className="aprendiendo">Aprendiendo</h2>
-                        {imageLearning.map(image => (
-                            <div className="img-container"  key={image.id}>
-                                <img src={image.path} alt="Imagen lenguaje" key={image.id}  loading="lazy"/>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                <form onSubmit={sendEmail} className="contacto">
-                    <h1>Contacto</h1>
-                    <p>¿Estás interesado en que trabajemos juntos?</p>
 
-                    <label htmlFor="nombre">Nombre:</label>
-                    <input required type="text" name="nombre" id="nombre" 
-                    value={name}
-                    onChange={(e : React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)} />
-                    
-                    <label htmlFor="correo">Correo Electrónico:</label>
-                    <input required type="email" name="correo" id="correo"  
-                    value={email} onChange={(e : React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}/>
+                <label htmlFor="nombre">Nombre:</label>
+                <input required type="text" name="nombre" id="nombre" 
+                value={name}
+                onChange={(e : React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)} />
+                
+                <label htmlFor="correo">Correo Electrónico:</label>
+                <input required type="email" name="correo" id="correo"  
+                value={email} onChange={(e : React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}/>
 
-                    <label htmlFor="asunto">Asunto:</label>
-                    <input required type="text" name="asunto" id="asunto" 
-                    value={subject} onChange={(e : React.ChangeEvent<HTMLInputElement>) => setSubject(e.target.value)}/>
+                <label htmlFor="asunto">Asunto:</label>
+                <input required type="text" name="asunto" id="asunto" 
+                value={subject} onChange={(e : React.ChangeEvent<HTMLInputElement>) => setSubject(e.target.value)}/>
 
-                    <label htmlFor="mensaje">Mensaje:</label>
-                    <textarea required name="mensaje"
-                    value={message} onChange={(e : React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)} id="mensaje"  placeholder="Coloque su mensaje acá" ></textarea>
+                <label htmlFor="mensaje">Mensaje:</label>
+                <textarea required name="mensaje"
+                value={message} onChange={(e : React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)} id="mensaje"  placeholder="Coloque su mensaje acá" ></textarea>
 
-                    <input type="submit" className="boton-enviar" value="Enviar" />
-                    </form>
-            </div>
+                <input type="submit" className="boton-enviar" value="Enviar" />
+                </form>
 
             {/*VENTANA DE CONFIRMACION (EXITOSO) */}
             {showConfirm && (

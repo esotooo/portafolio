@@ -9,14 +9,19 @@
 }
 @include tablet{
     .tecnologias{
-        margin-top: 15rem;
+        margin-top: 5rem;
     }
     .tecnologia-cards{
         grid-template-columns: repeat(2, 1fr);
     }
+    .aprendiendo{
+        grid-column: 1/ span 2;
+    }
 }
 
 .sobre-mi{
+    margin-top: 10rem;
+
     h1{
         color: v.$white;
         font-family: v.$titulo2;
@@ -37,6 +42,13 @@
     h1{
         font-family: v.$titulo2;
         font-size: 4rem;
+        margin-bottom: 0;
+        margin-top: 0
+    }
+    p{
+        margin-top: 0rem;
+        font-family: v.$contenido;
+        font-size: 1.6rem;
     }
 }
 
@@ -50,7 +62,9 @@
         padding: 2rem;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-
+        opacity: 0;
+        transform: scale(0.95);
+        transition: opacity 0.3s, transform 0.3s;
         margin-top: 0;
         row-gap: 1rem;
         column-gap: 2rem;
@@ -78,4 +92,3 @@
           }
     }
 }
-

@@ -17,6 +17,10 @@ import vscode from '../assets/img/VSCODE.png'
 import ph from '../assets/img/PHOTOSHOP.png'
 import ai from '../assets/img/ILLUSTRATOR.png'
 import npm from '../assets/img/NPM.png'
+import planificador from '../assets/img/PLANIFICADORGASTOS.png'
+import simple from '../assets/img/SIMPLE.png'
+import portfolio from '../assets/img/portfolio.png'
+
 
 
 
@@ -53,33 +57,55 @@ export const proyectos : proyecto[] = [
         "id": 1,
         "title": "Carrito de Compras",
         "image": carrito,
-        "description": "Carrito de compras utilizando useState y useEffect. También aplicando tailwind CSS.",
+        "description": "Tienda en línea donde los usuarios pueden ver guitarras con detalles y añadirlas al carrito de compras de forma sencilla.",
         "url1": "https://guitarcartts.netlify.app/",
-        "url2": "https://github.com/esotooo/carritoCompras"
+        "url2": "https://github.com/esotooo/carritoCompras",
+        "tecnologias": ["React", "TypeScript", "Bootstrap" ]
     },
     {
         "id": 2,
         "title": "Contador de Calorías",
         "image": caloriasImg,
-        "description": "Carrito de compras utilizando useState y useEffect. También aplicando tailwind CSS.",
-        "url1": "#",
-        "url2": "#"
+        "description": "Aplicación para llevar el conteo de calorías consumidas y quemadas con visualización dinámica.",
+        "url1": "https://escalorietracker.netlify.app/",
+        "url2": "#",
+        "tecnologias": ["React", "TypeScript", "TailwindCSS"]
     },
     {
         "id": 3,
-        "title": "Administrador de Bienes Raíces",
+        "title": "Calculadora de Propinas",
         "image": propinas,
-        "description": "Carrito de compras utilizando useState y useEffect. También aplicando tailwind CSS.",
-        "url1": "#",
-        "url2": "#"
+        "description": "Aplicación para que el usuario seleccione productos del menú, calcule el total de consumo y agregue propina, mostrando el monto final.",
+        "url1": "https://tstipcalculator.netlify.app/",
+        "url2": "#",
+        "tecnologias": ["React", "TypeScript", "TailwindCSS"]
     },
     {
         "id": 4,
-        "title": "Portfolio Edwin Soto",
-        "image": "",
-        "description": "Carrito de compras utilizando useState y useEffect. También aplicando tailwind CSS.",
-        "url1": "#",
-        "url2": "#"
+        "title": "Planificador de Gastos",
+        "image": planificador,
+        "description": "Aplicación para registrar ingresos y gastos, mostrando el presupuesto restante con una barra interactiva.",
+        "url1": "https://ts-control-gastos.netlify.app/",
+        "url2": "#",
+        "tecnologias": ["React", "TypeScript", "TailwindCSS"]
+    },
+    {
+      "id": 5,
+      "title": "Contador Simple",
+      "image": simple,
+      "description": "Contador básico con botones para incrementar, decrementar y reiniciar, que muestra el valor actualizado e incluye modo oscuro.",
+      "url1": "#",
+      "url2": "#",
+      "tecnologias": ["React", "TypeScript", "TailwindCSS"]
+    },
+    {
+      "id": 6,
+      "title": "Portafolio",
+      "image": portfolio,
+      "description": "Portafolio personal que muestra mi información profesional y permite enviar mensajes vía formulario de contacto por correo electrónico.",
+      "url1": "#",
+      "url2": "#",
+      "tecnologias": ["React", "TypeScript", "Sass", "NodeJS"]
     }
 ]
 

@@ -25,6 +25,7 @@ export type proyecto = {
     description: string
     url1: string
     url2: string
+    tecnologias: string[]
 }
 
 export type imagen = {

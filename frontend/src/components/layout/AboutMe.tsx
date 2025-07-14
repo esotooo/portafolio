@@ -17,7 +17,7 @@ export default function AboutMe() {
                 </p>
               </div>
               <div className="imagen">
-                    <img loading="lazy" src="/img/" alt="Foto de perfil" />
+                    <img loading="lazy" src="/img/FOTOCV.png" alt="Foto de perfil" />
               </div>
             </div>
             <div className="boton boton-enlaces ">

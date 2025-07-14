@@ -7,6 +7,9 @@ import Projects from "./components/layout/Projects"
 import Contact from "./components/layout/Contact"
 import Footer from "./components/footer/Footer"
 import DetailedProjects from "./components/layout/DetailedProjects";
+import Resume from "./components/layout/Resume"
+import Tecnologies from "./components/layout/Tecnologies"
+
 
 function App() {
   return (
@@ -21,6 +24,8 @@ function App() {
               <AboutMe />
               <Experience />
               <Projects />
+              <Resume />
+              <Tecnologies />
               <Contact />
             </>
           }

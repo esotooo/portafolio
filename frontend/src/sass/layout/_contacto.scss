@@ -8,8 +8,12 @@
     background-color: #355c69;
     border-radius: 3rem;
     padding: 2rem;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s, transform 0.3s;
     h1{
         font-family: v.$titulo2;
+        color: v.$white;
         font-size: 4rem;
         margin: 0;
         padding: 0;
@@ -21,6 +25,7 @@
     label{
         font-family: v.$subtitulo;
         font-size: 2rem;
+        color: v.$white;
     }
     input, textarea{
         display: flex;

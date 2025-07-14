@@ -1,101 +1,124 @@
 @use '/src/sass/global/variables' as v;
 @use '/src/sass/global/mixins' as *;
 
+.experiencia {
+  margin-bottom: 15rem;
 
-.experiencia{
-    margin-bottom: 8rem;
-    h1{
-        color: v.$white;
-        font-family: v.$titulo2;
-        font-size: 4rem;
+  h1 {
+    color: v.$white;
+    font-family: v.$titulo2;
+    font-size: 4rem;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    margin: 2rem 0;
+    border-bottom: 1px dashed v.$amber;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: none;
+
+    &:last-of-type {
+      border-bottom: none;
     }
-    ul{
-        margin: 0 ;
-        padding: 0;
-        list-style: none;
+
+    &.visible {
+      animation: fadeSlide 0.5s forwards;
     }
-    li{
-        margin: 2rem 0;
-        border-bottom: 1px dashed v.$amber;
-        &:last-of-type{
-            border-bottom: none;
-        }
+  }
+
+  .titulo {
+    display: flex;
+    align-items: center;
+
+    h2 {
+      color: v.$white;
+      font-weight: bold;
+      font-family: v.$titulo1;
+      font-size: 2.2rem;
+      margin: 0;
+      padding: 0;
+      margin-left: 1rem;
+
+      span {
+        font-size: 1.8rem;
+        color: v.$teal;
+      }
     }
-    .titulo{
-        display: flex;
-        align-items: center;
-        h2{
-            color: v.$white;
-            font-weight: bold;
-            font-family: v.$titulo1;
-            font-size: 2.2rem;
-            margin: 0;
-            padding: 0;
-            margin-left: 1rem;
-            span{
-                font-size: 1.8rem;
-                color: v.$teal;
-            }
-        }
-    }
+  }
 }
-.calendario{
-    font-size: 0;
-    margin-left: -1rem;
+
+.calendario {
+  font-size: 0;
+  margin-left: -1rem;
 }
-.datos{
+
+.datos {
+  margin-top: -2rem;
+
+  h3 {
+    color: v.$amber;
+    font-family: v.$subtitulo;
+    font-size: 2rem;
+  }
+
+  p {
+    font-family: v.$contenido;
     margin-top: -2rem;
-    h3{
-        color: v.$amber;
-        font-family: v.$subtitulo;
-        font-size: 2rem;
-    }
-    p{
-        font-family: v.$contenido;
-        margin-top: -2rem;
-        font-size: 1.6rem;
-        text-align: left;
-    }
+    font-size: 1.6rem;
+    text-align: left;
+  }
 }
 
-@include desktop{
-    .experiencia{
-        padding: 0 20rem 2rem 20rem;
+@include desktop {
+  .experiencia {
+    padding: 0 20rem 2rem 20rem;
+  }
+
+  .datos {
+    p {
+      text-align: left;
     }
-    .datos{
-        p{
-            text-align: left;
-        }
+  }
+}
+
+@include tablet {
+  .experiencia {
+    li {
+      border-bottom: none;
     }
-}  
-@include tablet{
-    .experiencia{
-        li{
-            border-bottom: none;
-        }
+  }
+
+  .calendario {
+    margin: -0.5rem;
+    font-size: 3rem;
+    padding: 0.5rem;
+    color: v.$white;
+    border-radius: 50%;
+    font-weight: 800;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow:
+      inset 0 0 0.5px rgba(255, 255, 255, 0.5),
+      0 4px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .datos {
+    padding-left: 3rem;
+    margin-top: -3rem;
+
+    p {
+      text-align: justify;
     }
-    .calendario{
-        margin: -.5rem;
-        font-size: 3rem;
-        padding: .5rem;
-        color: v.$white;
-        border-radius: 50%;
-        font-weight: 800;
-        background: rgba(0,0,0,0.4);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 
-            inset 0 0 0.5 px rgba(255, 255, 255, 0.5),
-            0 4px 30px rgba(0,0,0,0.3);
-    }
-    .datos{
-        padding-left: 3rem;
-        margin-top: -3rem;
-        p{
-            text-align: justify;
-        }
-    }
+  }
 }
 
 
+  
