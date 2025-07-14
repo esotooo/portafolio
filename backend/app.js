@@ -46,13 +46,13 @@ function sendEmailToMe({ email, subject, message, name }) {
       html: `
         <div style="font-family: 'Jost', sans-serif; background-color: #355c69; color: #fff; padding: 2rem; border-radius: 1rem;">
           <h2 style="font-family: 'Cal Sans', sans-serif; font-size: 2rem; color: #d97706; margin-bottom: 1rem;">
-            Nuevo mensaje desde tu portafolio
+            Nuevo mensaje desde mi portafolio
           </h2>
           <p style="margin: 0.5rem 0;">
             <strong>Nombre:</strong> <span style="color: #d3d3d3;">${name}</span>
           </p>
           <p style="margin: 0.5rem 0;">
-            <strong>Email:</strong> <span style="color: #d3d3d3;">${email}</span>
+            <strong>Email:</strong> <span style="color: #ffffff;">${email}</span>
           </p>
           <p style="margin: 0.5rem 0;">
             <strong>Asunto:</strong> <span style="color: #d3d3d3;">${subject}</span>
