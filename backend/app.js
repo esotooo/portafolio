@@ -124,11 +124,10 @@ app.post("/", async (req, res) => {
   try {
     console.log("Body recibido:", req.body)
 
-    await Promise.all(
+    await Promise.all([
       sendEmailToMe(req.body),
       sendConfirmationEmailToUser(req.body)
-    )
-
+    ])
 
     res.json({ success: true, message: "Mensajes enviados correctamente" })
   } catch (error) {
