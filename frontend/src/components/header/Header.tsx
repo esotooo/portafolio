@@ -128,7 +128,7 @@ export default function Header() {
                         </a>
                     ))}
                     <nav className='variante'>
-                        <a href="https://www.linkedin.com/in/edwin-soto-8793a2266/" className='icon-link' target="_blank"  aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/edwin-soto-5226a5374/" className='icon-link' target="_blank"  aria-label="LinkedIn">
                             <FaLinkedin />
                         </a>
                         <a href="https://github.com/esotooo" target="_blank" className='icon-git' aria-label="GitHub">
@@ -138,7 +138,7 @@ export default function Header() {
                 </nav>
 
                 <nav className='enlaces'>
-                        <a href="https://www.linkedin.com/in/edwin-soto-8793a2266/" target="_blank"  aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/edwin-soto-5226a5374/" target="_blank"  aria-label="LinkedIn">
                             <FaLinkedin />
                         </a>
                         <a href="https://github.com/esotooo?tab=repositories" target="_blank"  aria-label="GitHub">

@@ -37,7 +37,7 @@ export const enlaces: enlace[] = [
     {
       id: 3,
       text: "Correo",
-      url: "mailto:edwinsotos2003@gmail.com",
+      url: "mailto:edwinsoto.developer@gmail.com",
       icono: <HiOutlineMail />
     },
     {

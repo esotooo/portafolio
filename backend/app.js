@@ -44,23 +44,24 @@ function sendEmailToMe({ email, subject, message, name }) {
       subject: `Asunto: ${subject}`,
       text: `Nombre: ${name}\nCorreo: ${email}\nMensaje:\n${message}`,
       html: `
-        <div style="font-family: 'Jost', sans-serif; background-color: #355c69; color: #fff; padding: 2rem; border-radius: 1rem;">
+        <div style="font-family: 'Jost', sans-serif; background-color: #ffffff; color: #333333; padding: 2rem; border-radius: 1rem; border: 1px solid #ddd;">
           <h2 style="font-family: 'Cal Sans', sans-serif; font-size: 2rem; color: #d97706; margin-bottom: 1rem;">
             Nuevo mensaje desde mi portafolio
           </h2>
           <p style="margin: 0.5rem 0;">
-            <strong>Nombre:</strong> <span style="color: #d3d3d3;">${name}</span>
+            <strong>Nombre:</strong> <span>${name}</span>
           </p>
           <p style="margin: 0.5rem 0;">
-            <strong>Email:</strong> <span style="color: #ffffff;">${email}</span>
+            <strong>Email:</strong> <span>${email}</span>
           </p>
           <p style="margin: 0.5rem 0;">
-            <strong>Asunto:</strong> <span style="color: #d3d3d3;">${subject}</span>
+            <strong>Asunto:</strong> <span>${subject}</span>
           </p>
-          <hr style="border: 1px solid #6b7280; margin: 1rem 0;">
-          <p style="margin-top: 1rem; color: #fff;">${message}</p>
+          <hr style="border: 1px solid #ccc; margin: 1rem 0;">
+          <p style="margin-top: 1rem;">${message}</p>
         </div>
-      `
+    `
+    
     }
 
     transporter.sendMail(mailConfigs, function (error, info) {
@@ -91,12 +92,12 @@ function sendConfirmationEmailToUser({ email, name, subject }) {
       subject: `Confirmación de recepción de mensaje. Asunto: ${subject}`,
       text: `Hola ${name},\n\nGracias por contactarme. He recibido tu mensaje y pronto me pondré en contacto contigo.\n\nSaludos!`,
       html: `
-        <div style="font-family: 'Jost', sans-serif; background-color: #355c69; color: #fff; padding: 2rem; border-radius: 1rem;">
+        <div style="font-family: 'Jost', sans-serif; background-color: #ffffff; color: #333333; padding: 2rem; border-radius: 1rem; border: 1px solid #ddd;">
           <h2 style="font-family: 'Cal Sans', sans-serif; font-size: 2rem; color: #d97706; margin-bottom: 1rem;">
             ¡Hola ${name}!
           </h2>
           <p style="margin: 0.5rem 0;">
-            Gracias por contactarme. He recibido tu mensaje con el asunto: <span style="color: #d3d3d3;">${subject}</span>
+            Gracias por contactarme. He recibido tu mensaje con el asunto: <span><strong>${subject}</strong></span>
           </p>
           <p style="margin: 0.5rem 0;">
             En breve me pondré en contacto contigo para atender tu solicitud.
@@ -105,7 +106,8 @@ function sendConfirmationEmailToUser({ email, name, subject }) {
             ¡Saludos cordiales!
           </p>
         </div>
-      `
+    `
+    
     }
     
     transporter.sendMail(mailConfigs, function (error, info) {

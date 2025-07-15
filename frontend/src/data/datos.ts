@@ -68,7 +68,7 @@ export const proyectos : proyecto[] = [
         "image": caloriasImg,
         "description": "Aplicación para llevar el conteo de calorías consumidas y quemadas con visualización dinámica.",
         "url1": "https://escalorietracker.netlify.app/",
-        "url2": "#",
+        "url2": "https://github.com/esotooo/ContadorCalorias",
         "tecnologias": ["React", "TypeScript", "TailwindCSS"]
     },
     {
@@ -77,7 +77,7 @@ export const proyectos : proyecto[] = [
         "image": propinas,
         "description": "Aplicación para que el usuario seleccione productos del menú, calcule el total de consumo y agregue propina, mostrando el monto final.",
         "url1": "https://tstipcalculator.netlify.app/",
-        "url2": "#",
+        "url2": "https://github.com/esotooo/CalculadorPropinas",
         "tecnologias": ["React", "TypeScript", "TailwindCSS"]
     },
     {
@@ -86,7 +86,7 @@ export const proyectos : proyecto[] = [
         "image": planificador,
         "description": "Aplicación para registrar ingresos y gastos, mostrando el presupuesto restante con una barra interactiva.",
         "url1": "https://ts-control-gastos.netlify.app/",
-        "url2": "#",
+        "url2": "https://github.com/esotooo/PlanificadorGastos",
         "tecnologias": ["React", "TypeScript", "TailwindCSS"]
     },
     {
@@ -94,8 +94,8 @@ export const proyectos : proyecto[] = [
       "title": "Contador Simple",
       "image": simple,
       "description": "Contador básico con botones para incrementar, decrementar y reiniciar, que muestra el valor actualizado e incluye modo oscuro.",
-      "url1": "#",
-      "url2": "#",
+      "url1": "https://contador-simple-ts.netlify.app",
+      "url2": "https://github.com/esotooo/ContadorSimple",
       "tecnologias": ["React", "TypeScript", "TailwindCSS"]
     },
     {
@@ -103,8 +103,8 @@ export const proyectos : proyecto[] = [
       "title": "Portafolio",
       "image": portfolio,
       "description": "Portafolio personal que muestra mi información profesional y permite enviar mensajes vía formulario de contacto por correo electrónico.",
-      "url1": "#",
-      "url2": "#",
+      "url1": "esportafolio.netlify.app",
+      "url2": "https://github.com/esotooo/portafolio",
       "tecnologias": ["React", "TypeScript", "Sass", "NodeJS"]
     }
 ]
