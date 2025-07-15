@@ -14,52 +14,6 @@ Puedes ver el portafolio en vivo aquí:
 
 ---
 
-## Estructura del proyecto
-
-El proyecto está organizado en dos carpetas principales: `backend` para la API y envío de correos, y `frontend` para la aplicación web.  
-A continuación, la estructura completa:
-
-PORTFOLIO-REACT/
-├── backend/
-│   ├── node_modules/
-│   ├── .env
-│   ├── app.js
-│   ├── package-lock.json
-│   └── package.json
-│
-├── frontend/
-│   ├── dist/
-│   ├── node_modules/
-│   ├── public/
-│   ├── src/
-│   │   ├── assets/
-│   │   ├── components/
-│   │   │   ├── footer/
-│   │   │   ├── header/
-│   │   │   └── layout/
-│   │   ├── data/
-│   │   ├── hooks/
-│   │   ├── sass/
-│   │   │   ├── global/
-│   │   │   ├── layout/
-│   │   │   ├── utilities/
-│   │   │   └── App.scss
-│   │   ├── types/
-│   │   ├── App.tsx
-│   │   ├── index.css
-│   │   ├── main.tsx
-│   │   └── vite-env.d.ts
-│   │
-│   ├── eslint.config.js
-│   ├── index.html
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── README.md
-│   ├── tsconfig.app.json
-│   └── tsconfig.json
-
----
-
 ## Tecnologías usadas
 
 ### Frontend
