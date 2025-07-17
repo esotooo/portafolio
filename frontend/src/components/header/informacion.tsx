@@ -25,7 +25,7 @@ export const enlaces: enlace[] = [
     {
       id: 1,
       text: "LinkedIn",
-      url: "https://www.linkedin.com/in/edwin-soto-8793a2266/",
+      url: "https://www.linkedin.com/in/edwin-soto-5226a5374/",
       icono: <FaLinkedin />
     },
     {

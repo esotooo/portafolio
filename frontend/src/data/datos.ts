@@ -38,7 +38,7 @@ export const experiencias : experiencia[] = [
       "title": "Representante de Servicio al Cliente",
       "company": "Telus International",
       "date": "Febrero 2023 - Octubre 2023",
-      "summary": "Encargado de atender consultas técnicas y de servicio para usuarios en Estados Unidos." +
+      "summary": "Encargado de atender consultas técnicas y de servicio para usuarios en Estados Unidos. " +
       "Adquirí experiencia en soporte técnico, atención al cliente en tiempo real, manejo de conflictos y documentación de incidencias."
     },
     {
@@ -46,8 +46,8 @@ export const experiencias : experiencia[] = [
       "title": "Asistente de Documentación",
       "company": "Qualiser Laboratorio",
       "date": "Julio 2021 - Febrero 2023",
-      "summary": "Colaboré en la elaboración y gestión de Procedimientos Específicos de Operación (PEO) en el área de calidad, cumpliendo con normativas internas del sector farmacéutico."+
-      "También me desempeñé en el diseño de materiales gráficos institucionales, como tarjetas de presentación, infografías y anuncios."+
+      "summary": "Colaboré en la elaboración y gestión de Procedimientos Específicos de Operación (PEO) en el área de calidad, cumpliendo con normativas internas del sector farmacéutico. "+
+      "También me desempeñé en el diseño de materiales gráficos institucionales, como tarjetas de presentación, infografías y anuncios. "+
       "Durante este período desarrollé un software interno para la gestión de reactivos, experiencia que despertó mi interés por la programación y el desarrollo web."
     }
   ]
