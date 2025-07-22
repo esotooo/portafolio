@@ -13,28 +13,30 @@ function DetailedProjectsItem({ proyecto, index }: { proyecto: typeof proyectos[
 
   useEffect(() => {
     if (!imgRef.current) return;
-
+  
     if (!facRef.current) facRef.current = new FastAverageColor();
-
+  
     facRef.current.getColorAsync(imgRef.current)
-    .then((color: {
-      rgb: string
-      rgba: string
-      hex: string
-      hex8: string
-      isDark: boolean
-    }) => {
-      setBgGradient(`linear-gradient(136deg, ${color.rgb} 100%)`);
+    .then((color) => {
+      function darkenRgb(rgb: string, amount = 0.4) {
+        const nums = rgb.match(/\d+/g)?.map(Number) ?? [0, 0, 0];
+        const darkened = nums.map(n => Math.max(0, Math.floor(n * (1 - amount))));
+        return `rgb(${darkened.join(",")})`;
+      }
+  
+      const darkColor = darkenRgb(color.rgb);
+      setBgGradient(`linear-gradient(136deg, ${color.rgb} 40%, ${darkColor} 100%)`);
     })
     .catch(() => {
-      setBgGradient("")
+      setBgGradient("");
     })
-
+  
     return () => {
       facRef.current?.destroy();
       facRef.current = null;
     };
   }, [proyecto.image]);
+  
   return (
     <div
       ref={onScreenRef}
