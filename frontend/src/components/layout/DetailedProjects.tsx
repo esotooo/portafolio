@@ -64,10 +64,10 @@ function DetailedProjectsItem({ proyecto, index }: { proyecto: typeof proyectos[
         </div>
         <p>{proyecto.description}</p>
         <div className="opciones">
-          <a href={proyecto.url1} className="site">
+          <a href={proyecto.url1} className="site" target="_blank" rel="noopener noreferrer">
             <i><MdHttp /></i>Demo
           </a>
-          <a href={proyecto.url2} className="git">
+          <a href={proyecto.url2} className="git" target="_blank" rel="noopener noreferrer">
             <i><FaGithub /></i>GitHub
           </a>
         </div>
