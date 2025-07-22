@@ -20,7 +20,7 @@ import npm from '../assets/img/NPM.png'
 import planificador from '../assets/img/PLANIFICADORGASTOS.png'
 import simple from '../assets/img/SIMPLE.png'
 import portfolio from '../assets/img/portfolio.png'
-
+import sounds from '../assets/img/sounds.png'
 
 
 
@@ -103,9 +103,18 @@ export const proyectos : proyecto[] = [
       "title": "Portafolio",
       "image": portfolio,
       "description": "Portafolio personal que muestra mi información profesional y permite enviar mensajes vía formulario de contacto por correo electrónico.",
-      "url1": "esportafolio.netlify.app",
+      "url1": "https://esportafolio.netlify.app/",
       "url2": "https://github.com/esotooo/portafolio",
       "tecnologias": ["React", "TypeScript", "Sass", "NodeJS"]
+    },
+    {
+      "id": 7,
+      "title": "My Music",
+      "image": sounds,
+      "description": "Página web interactiva que muestra mis géneros musicales favoritos, álbumes recomendados y playlists seleccionadas",
+      "url1": "https://my-music-sepia.vercel.app/",
+      "url2": "https://github.com/esotooo/myMusic",
+      "tecnologias": ["TypeScript", "CSS", "HTML"]
     }
 ]
 
