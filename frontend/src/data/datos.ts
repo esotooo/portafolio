@@ -11,7 +11,6 @@ import ts from '../assets/img/TS.png'
 import js from '../assets/img/JS.png'
 import mysql from '../assets/img/MYSQL.png'
 import react from '../assets/img/react.png'
-import php from '../assets/img/PHP.png'
 import figma from '../assets/img/FIGMA.png'
 import vscode from '../assets/img/VSCODE.png'
 import ph from '../assets/img/PHOTOSHOP.png'
@@ -21,7 +20,12 @@ import planificador from '../assets/img/PLANIFICADORGASTOS.png'
 import simple from '../assets/img/SIMPLE.png'
 import portfolio from '../assets/img/portfolio.png'
 import sounds from '../assets/img/sounds.png'
-
+import nodejs from '../assets/img/nodejs.png'
+import mssql from '../assets/img/mssql.png'
+import python from '../assets/img/python.webp'
+import flask from '../assets/img/flask.png'
+import postman from '../assets/img/postman.png'
+import express from '../assets/img/express.svg'
 
 
 export const experiencias : experiencia[] = [
@@ -143,17 +147,20 @@ export const imageFront : imagen[] = [
     "id": 6,
     "path": react
   },
+  {
+    "id": 7,
+    "path": ts
+  },
 ]
 
-
-export const imageLearning : imagen[] = [
+export const imageBack : imagen[] = [
   {
     "id": 1,
-    "path": ts
+    "path": nodejs
   },
   {
     "id": 2,
-    "path": php
+    "path": express
   },
   {
     "id": 3,
@@ -161,7 +168,25 @@ export const imageLearning : imagen[] = [
   },
   {
     "id": 4,
+    "path": mssql
+  },
+]
+
+
+export const imageLearning : imagen[] = [
+  {
+    "id": 1,
+    "path": python
+  },
+
+  {
+    "id": 2,
     "path": figma
+  },
+
+  {
+    "id": 3,
+    "path": flask
   },
 ]
 
@@ -186,5 +211,8 @@ export const tools : imagen[] = [
     "id": 5,
     "path": ph
   },
-  
+  {
+    "id": 6,
+    "path": postman
+  },
 ]
