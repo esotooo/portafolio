@@ -9,11 +9,10 @@ export default function AboutMe() {
             <div className="informacion">
               <div className="texto">
                 <h1>Hola! Soy <span>Edwin Soto</span></h1>
-                <h2>Desarrollador Frontend</h2>
+                <h2>Desarrollador Fullstack</h2>
                 <p>
-                    Soy un desarrollador frontend en crecimiento, apasionado por crear
-                    páginas web que sean fáciles de usar y que se vean bien tanto en 
-                    computadoras como en celulares
+                  Soy un desarrollador fullstack en crecimiento, enfocado en crear aplicaciones web intuitivas, 
+                  eficientes y adaptables a cualquier dispositivo.
                 </p>
               </div>
               <div className="imagen">

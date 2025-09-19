@@ -1,8 +1,9 @@
-import { imageFront, imageLearning, tools } from "../../data/datos";
+import { imageFront, imageLearning, tools, imageBack} from "../../data/datos";
 import { useOnScreen } from "../../hooks/useOnScreen";
 
 export default function Tecnologies() {
     const { ref: frontRef, isVisible: frontVisible } = useOnScreen<HTMLDivElement>({ threshold: 0.2 });
+    const { ref: backRef, isVisible: backVisible} = useOnScreen<HTMLDivElement>({ threshold: 0.2 });
     const { ref: toolsRef, isVisible: toolsVisible } = useOnScreen<HTMLDivElement>({ threshold: 0.2 });
     const { ref: learningRef, isVisible: learningVisible } = useOnScreen<HTMLDivElement>({ threshold: 0.2 });
 
@@ -11,7 +12,7 @@ export default function Tecnologies() {
             <div className="tecnologias">
                 <h1>Tecnologías</h1>
                 <p>
-                    A continuación, se presenta un detalle organizado de las tecnologías que utilizo, clasificadas en frontend, herramientas y tecnologías en aprendizaje.
+                    A continuación, se presenta un detalle organizado de las tecnologías que utilizo, clasificadas en frontend, backend, herramientas y tecnologías en aprendizaje.
                 </p>
                 <div className="tecnologia-cards gradiente-texto">
                     <div
@@ -20,11 +21,29 @@ export default function Tecnologies() {
                         style={{ animationDelay: ".3s" }}
                     >
                         <h2 className="frontend">Frontend</h2>
-                        {imageFront.map(image => (
-                            <div className="img-container" key={image.id}>
-                                <img src={image.path} alt="Imagen lenguaje" loading="lazy" />
-                            </div>
-                        ))}
+                        <div className="imagenes">
+                            {imageFront.map(image => (
+                                <div className="img-container" key={image.id}>
+                                    <img src={image.path} alt="Imagen lenguaje" loading="lazy" />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div
+                        ref={backRef}
+                        className={`tecnologia ${backVisible ? "fadeZoom" : ""}`}
+                        style={{ animationDelay: ".3s" }}
+                    >
+                        <h2 className="backend">Backend</h2>
+                        <div className="imagenes">
+                            {imageBack.map(image => (
+                                <div className="img-container" key={image.id}>
+                                    <img src={image.path} alt="Imagen lenguaje" loading="lazy" />
+                                </div>
+                            ))}
+                        </div>
+                   
                     </div>
 
                     <div
@@ -33,24 +52,30 @@ export default function Tecnologies() {
                         style={{ animationDelay: ".6s" }}
                     >
                         <h2 className="herramientas">Herramientas</h2>
-                        {tools.map(image => (
-                            <div className="img-container" key={image.id}>
-                                <img src={image.path} alt="Imagen herramienta" loading="lazy" />
-                            </div>
-                        ))}
+                        <div className="imagenes">
+                            {tools.map(image => (
+                                <div className="img-container" key={image.id}>
+                                    <img src={image.path} alt="Imagen herramienta" loading="lazy" />
+                                </div>
+                            ))}
+                        </div>
+                       
                     </div>
 
                     <div
                         ref={learningRef}
-                        className={`tecnologia aprendiendo ${learningVisible ? "fadeZoom" : ""}`}
-                        style={{ animationDelay: ".9s" }}
+                        className={`tecnologia ${learningVisible ? "fadeZoom" : ""}`}
+                        style={{ animationDelay: ".6s" }}
                     >
                         <h2 className="aprendiendo">Aprendiendo</h2>
-                        {imageLearning.map(image => (
-                            <div className="img-container" key={image.id}>
-                                <img src={image.path} alt="Imagen aprendizaje" loading="lazy" />
-                            </div>
-                        ))}
+                        <div className="imagenes">
+                            {imageLearning.map(image => (
+                                <div className="img-container" key={image.id}>
+                                    <img src={image.path} alt="Imagen aprendizaje" loading="lazy" />
+                                </div>
+                            ))}
+                        </div>
+
                     </div>
                 </div>
             </div>
