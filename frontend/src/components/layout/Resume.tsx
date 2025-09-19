@@ -13,7 +13,7 @@ export default function Resume() {
             También colaboré como asistente de documentación en un laboratorio, apoyando en la creación de material gráfico y técnico.
             Estas experiencias reforzaron mi atención al detalle y mi enfoque centrado en el usuario, cualidades que aplico hoy como desarrollador fullstack en formación.
           </p>
-          <a href="/CV_EdwinSoto_FrontendDeveloper.pdf" className="boton-principal" download>
+          <a href="/CV_EdwinSoto_FullstackDeveloper.pdf" className="boton-principal" download>
             Descargar CV
           </a>
         </div>
